@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Customer Details</h2>
+        <form id="orderForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="address">Shipping Address</label>
+            <input type="text" id="address" required>
+
+            <!-- Hidden Laptop Details -->
+            <input type="hidden" id="laptopModel">
+            <input type="hidden" id="amount">
+
+            <button type="button" onclick="submitOrder()">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        // Load laptop data from sessionStorage
+        const model = sessionStorage.getItem("laptopModel");
+        const amount = sessionStorage.getItem("amount");
+
+        document.getElementById("laptopModel").value = model;
+        document.getElementById("amount").value = amount;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
